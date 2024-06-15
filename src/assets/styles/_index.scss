@@ -1,0 +1,49 @@
+@import "./_variables.scss";
+@import "./_font.scss";
+@import "./_layout.scss";
+@import "./_mixins.scss";
+@include spacing-utilities;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-background-system;
+  overflow: hidden;
+  font-family: Arial, serif;
+}
+
+/* Estilos gerais para a scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Largura da barra de rolagem */
+  height: 12px; /* Altura da barra de rolagem horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Cor de fundo da trilha da scrollbar */
+  border-radius: 10px; /* Borda arredondada para a trilha */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3797D9; /* Cor do polegar da scrollbar */
+  border-radius: 10px; /* Borda arredondada para o polegar */
+  border: 3px solid #f1f1f1; /* Adiciona um espaço entre o polegar e a trilha */
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: #317ab9; /* Cor do polegar ao passar o mouse */
+}
+
+/* Estilo para a barra de rolagem horizontal (opcional) */
+::-webkit-scrollbar-horizontal {
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  border-radius: 10px;
+}

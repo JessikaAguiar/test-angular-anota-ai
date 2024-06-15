@@ -1,0 +1,95 @@
+.animation-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.02);
+  }
+  .card {
+    width: 260px;
+    height: 450px;
+    margin: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .card-header {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: end;
+      align-items: end;
+    }
+    .card-content {
+      font-size: 0.9rem;
+      text-align: justify;
+      height: 250px;
+      overflow-x: auto;
+      padding: 5px 15px;
+      h1 {
+        font-weight: normal;
+        margin-bottom: 5px;
+      }
+      p {
+        margin-left: 0.5rem;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: rgba(239, 147, 27, 0.92); /* Cor do polegar da scrollbar */
+        border-radius: 10px; /* Borda arredondada para o polegar */
+        border: 3px solid #f1f1f1; /* Adiciona um espaço entre o polegar e a trilha */
+      }
+
+      /* Hover effect */
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba(239, 147, 27, 0.92); /* Cor do polegar ao passar o mouse */
+      }
+    }
+
+  }
+}
+.close-btn {
+  z-index: 1;
+  background-color: #FFFFFF;
+  border: 2px solid #D6D6D6;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  left: 247px;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  background-image: url("@assets/images/icons/close.svg");
+  background-position: center;
+  background-size: 20px 20px;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    background-image: url("@assets/images/icons/close-hover.svg");
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease-in-out, background-image 0s;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("@assets/images/icons/close-hover.svg");
+    background-position: center;
+    background-size: 20px 20px;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+  &:not(:hover)::after {
+    transition: opacity 0.2s ease-in-out 0.1s;
+  }
+}

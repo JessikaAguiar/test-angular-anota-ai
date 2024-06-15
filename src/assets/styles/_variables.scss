@@ -1,0 +1,42 @@
+// Cores de fundos
+$color-background-system: #EFEFEF ;
+$color-background-input: #FFFFFF ;
+$color-background-btn-input: #FEFEFE;
+$color-background-toolbar: #FFFFFF ;
+$color-background-hr: #9A9A9A;
+$color-background-hr-hover: #d864ef;
+
+// Cores de bordas
+$color-border-input: #D9D9DB;
+$color-border-input-focus: #3797D9;
+
+
+// Cores de textos
+$color-description-name-hover: #2689EE;
+
+//Cores de sombras
+$color-shadow-focus: rgba(55, 151, 217, 0.5);
+
+//Grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$columns: 12;
+
+//Margins e Paddings
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  auto: auto
+);

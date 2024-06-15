@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {ToolbarComponent} from "@shared/components/layout/toolbar/toolbar.component";
+import {CommonModule} from "@angular/common";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterOutlet, ToolbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'test-angular-anota-ai';
+  title = 'Test Angular Anota Ai';
+
 }

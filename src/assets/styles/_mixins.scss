@@ -1,0 +1,77 @@
+@import "./_variables.scss";
+
+
+//Grid
+@mixin make-col($name, $num) {
+  @for $i from 1 through $columns {
+    .col-#{$name}-#{$i} {
+      width: calc(100% * #{$i} / #{$columns} - 0.5rem);
+    }
+  }
+}
+
+@each $name, $breakpoint in $grid-breakpoints {
+  @if $breakpoint == 0 {
+    @include make-col($name, $columns);
+  } @else {
+    @media (min-width: $breakpoint) {
+      @include make-col($name, $columns);
+    }
+  }
+}
+
+//Margins e Paddings
+@mixin spacing-utilities {
+  // Itera sobre todos os tamanhos de espaçamento
+  @each $size, $value in $spacers {
+    // Classes para margin
+    .m-#{$size} {
+      margin: $value;
+    }
+    .mt-#{$size} {
+      margin-top: $value;
+    }
+    .mr-#{$size} {
+      margin-right: $value;
+    }
+    .mb-#{$size} {
+      margin-bottom: $value;
+    }
+    .ml-#{$size} {
+      margin-left: $value;
+    }
+    .mx-#{$size} {
+      margin-left: $value;
+      margin-right: $value;
+    }
+    .my-#{$size} {
+      margin-top: $value;
+      margin-bottom: $value;
+    }
+
+    // Classes para padding
+    .p-#{$size} {
+      padding: $value;
+    }
+    .pt-#{$size} {
+      padding-top: $value;
+    }
+    .pr-#{$size} {
+      padding-right: $value;
+    }
+    .pb-#{$size} {
+      padding-bottom: $value;
+    }
+    .pl-#{$size} {
+      padding-left: $value;
+    }
+    .px-#{$size} {
+      padding-left: $value;
+      padding-right: $value;
+    }
+    .py-#{$size} {
+      padding-top: $value;
+      padding-bottom: $value;
+    }
+  }
+}

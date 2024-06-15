@@ -1,0 +1,12 @@
+<div style="position: relative;" class="animation-card" >
+  <button class="close-btn" (click)="removeCard(card.id)"></button>
+  <article class="card">
+    <header class="card-header" [style.background-image]="'url(' + card.img + ')'">
+      <chip [text]="card.options.text" [color]="card.options.color" [colorBorder]="card.options.color" />
+    </header>
+    <main class="card-content">
+      <h1 class="animate__rotateOut">{{ card.title }}</h1>
+      <p>{{card.description}}</p>
+    </main>
+  </article>
+</div>
