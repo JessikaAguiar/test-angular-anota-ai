@@ -1,0 +1,50 @@
+.progress-container {
+  position: relative;
+  width: 200px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading-icon {
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  background: url("@assets/images/128x128.png") no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  animation: moveIcon 3s infinite ease-in-out;
+}
+.progress-bar {
+  z-index: 1;
+  width: 100%;
+  height: 10px;
+  background: #e0e0e0;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+}
+.progress-bar::before {
+  content: '';
+  width: 20%;
+  height: 100%;
+  background: #007bff;
+  position: absolute;
+  animation: progress 3s ease-in-out infinite;
+}
+@keyframes progress {
+  0% {
+    left: -10%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes moveIcon {
+  0% {
+    left: -10%;
+  }
+  100% {
+    left: 88%;
+  }
+}
