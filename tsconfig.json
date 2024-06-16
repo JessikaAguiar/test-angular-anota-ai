@@ -34,7 +34,10 @@
       "@shared/models/*": ["src/app/shared/models/*"],
       "@shared/enums/*": ["src/app/shared/enums/*"],
       "@assets/*": ["src/assets/*"],
-    }
+    },
+    "typeRoots": ["./node_modules/@types",
+      "./src/types-modules"
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

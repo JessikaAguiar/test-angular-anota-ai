@@ -6,6 +6,7 @@ import {CommonModule, NgForOf} from "@angular/common";
 import {CardComponent} from "@shared/components/card/card.component";
 import {HttpClientModule} from "@angular/common/http";
 import {DashboardService} from "./dashboard-service/dashboard.service";
+import * as diacritics from "diacritics";
 
 @Component({
   selector: 'app-dashboard-view',
@@ -24,6 +25,7 @@ import {DashboardService} from "./dashboard-service/dashboard.service";
 })
 export class DashboardViewComponent implements OnInit {
   cards: any[] = [];
+  cardsFilter: any[] = [];
   constructor(private dashboardService: DashboardService) {}
 
 
@@ -32,8 +34,16 @@ export class DashboardViewComponent implements OnInit {
   }
 
   searchValue($event: string) {
-    console.log($event)
+    const normalizedSearchTerm = this.normalizeText($event);
+    this.cardsFilter = this.cards.filter(card => {
+      return this.normalizeText(card.title.toLowerCase()).includes(normalizedSearchTerm)
+    })
   }
+
+  normalizeText(text: string) {
+    return diacritics.remove(text).toLowerCase()
+  }
+
 
   removeCard($event: string) {
     console.log($event)
@@ -45,6 +55,7 @@ export class DashboardViewComponent implements OnInit {
         card.options = this.typeCard(card.type)
         return card
       });
+      this.cardsFilter = this.cards;
     });
   }
 
@@ -74,7 +85,4 @@ export class DashboardViewComponent implements OnInit {
         }
       }
   }
-
-
-
 }
