@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {ToolbarComponent} from "@shared/components/layout/toolbar/toolbar.component";
 import {InputSearchComponent} from "@shared/components/forms/input-search/input-search.component";
@@ -7,6 +7,8 @@ import {CardComponent} from "@shared/components/card/card.component";
 import {HttpClientModule} from "@angular/common/http";
 import {DashboardService} from "./dashboard-service/dashboard.service";
 import * as diacritics from "diacritics";
+import {LoadingComponent} from "@shared/components/loadign/loading.component";
+import {CardType} from "@shared/types/card-type";
 
 @Component({
   selector: 'app-dashboard-view',
@@ -18,15 +20,22 @@ import * as diacritics from "diacritics";
     InputSearchComponent,
     NgForOf,
     CardComponent,
-    HttpClientModule
+    HttpClientModule,
+    LoadingComponent
   ],
   templateUrl: './dashboard-view.component.html',
   styleUrl: './dashboard-view.component.scss',
 })
-export class DashboardViewComponent implements OnInit {
+export class DashboardViewComponent implements OnInit, OnDestroy {
   cards: any[] = [];
   cardsFilter: any[] = [];
+  loading: boolean = false;
+  showBtnGet: boolean = false;
   constructor(private dashboardService: DashboardService) {}
+
+  ngOnDestroy(): void {
+    this.dashboardService.clearLocalStorage()
+  }
 
 
   ngOnInit(): void {
@@ -44,18 +53,26 @@ export class DashboardViewComponent implements OnInit {
     return diacritics.remove(text).toLowerCase()
   }
 
-
   removeCard($event: string) {
-    console.log($event)
+    this.cardsFilter = this.dashboardService.delete($event)
+    this.cards = this.cardsFilter
+
+    if(!(this.cardsFilter.length > 0)) {
+      this.showBtnGet = true
+    }
   }
 
   initialize() {
+    this.loading = true;
     this.dashboardService.pageable().subscribe((data: any) => {
-      this.cards = data.map((card: any) => {
+      this.cards = data.map((card: CardType) => {
         card.options = this.typeCard(card.type)
         return card
-      });
-      this.cardsFilter = this.cards;
+      })
+      this.cardsFilter = this.cards
+      this.dashboardService.create(this.cardsFilter)
+      this.loading = false
+      this.showBtnGet = false
     });
   }
 

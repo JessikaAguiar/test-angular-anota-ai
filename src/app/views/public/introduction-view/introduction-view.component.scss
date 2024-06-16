@@ -1,0 +1,89 @@
+.bg-color-eu {
+  background-image: url("@assets/images/plants.gif");
+  background-position: center left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes moveBg {
+  0% { background-position: center top; }
+  100% { background-position: center bottom; }
+}
+.description-eu {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeIn 5s ease-in-out, moveBg 15s infinite alternate ease-in-out;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 4rem;
+  margin-top: 2rem;
+  text-align: justify;
+  header {
+    width: 50%;
+    h1 {
+      font-size: 2.5em;
+      color: #4CAF50;
+    }
+
+    h2 {
+      font-size: 1.75em;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      color: #2c75be;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .contact-info {
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      .contact-link {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: #45a049;
+        }
+      }
+    }
+  }
+  main {
+    .image-container {
+      perspective: 1000px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #000000;
+    }
+    .flip-image {
+      width: 104px;
+      height: auto;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      &:hover {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}

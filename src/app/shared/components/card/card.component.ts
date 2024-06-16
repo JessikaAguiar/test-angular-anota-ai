@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ChipComponent} from "@shared/components/chip/chip.component";
+import {CardType} from "@shared/types/card-type";
 
 @Component({
   selector: 'card',
