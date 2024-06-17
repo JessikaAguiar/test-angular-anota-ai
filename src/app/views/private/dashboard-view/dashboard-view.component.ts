@@ -57,6 +57,7 @@ export class DashboardViewComponent implements OnInit, OnDestroy {
     this.cardsFilter = this.dashboardService.delete($event)
     this.cards = this.cardsFilter
 
+
     if(!(this.cardsFilter.length > 0)) {
       this.showBtnGet = true
     }

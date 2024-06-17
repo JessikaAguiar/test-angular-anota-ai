@@ -17,29 +17,28 @@ body {
   font-family: Arial, serif;
 }
 
-/* Estilos gerais para a scrollbar */
+
 ::-webkit-scrollbar {
-  width: 12px; /* Largura da barra de rolagem */
-  height: 12px; /* Altura da barra de rolagem horizontal */
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Cor de fundo da trilha da scrollbar */
-  border-radius: 10px; /* Borda arredondada para a trilha */
+  background: #f1f1f1;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3797D9; /* Cor do polegar da scrollbar */
-  border-radius: 10px; /* Borda arredondada para o polegar */
-  border: 3px solid #f1f1f1; /* Adiciona um espaço entre o polegar e a trilha */
+  background: #3797D9;
+  border-radius: 10px;
+  border: 3px solid #f1f1f1;
 }
 
 /* Hover effect */
 ::-webkit-scrollbar-thumb:hover {
-  background: #317ab9; /* Cor do polegar ao passar o mouse */
+  background: #317ab9;
 }
 
-/* Estilo para a barra de rolagem horizontal (opcional) */
 ::-webkit-scrollbar-horizontal {
   height: 12px;
 }
