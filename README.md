@@ -37,7 +37,7 @@ types-modules
 ### Descrição das Pastas
 
 - **shared**: Contém componentes reutilizáveis, serviços e tipos.
-- **views**: Organiza as vistas em privadas e públicas.
+- **views**: Organiza as páginas em privadas e públicas.
 - **assets**: Contém imagens e estilos globais.
 - **types-modules**: Contém definições de tipos e módulos auxiliares.
 - **root files**: Arquivos principais de configuração e bootstrap da aplicação.
