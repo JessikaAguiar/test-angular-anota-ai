@@ -12,7 +12,7 @@ export class ToolbarComponent {
   constructor(private router:Router) {}
 
   goToIntroduction() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/'])
   }
 
 }

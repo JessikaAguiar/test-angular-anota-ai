@@ -12,7 +12,7 @@ import {FormsModule} from "@angular/forms";
 })
 export class InputSearchComponent {
   @Input() placeholder: string
-  @Output() value = new EventEmitter<string>();
+  @Output() value = new EventEmitter<string>()
   search: string
 
   sendValue($event: Event) {

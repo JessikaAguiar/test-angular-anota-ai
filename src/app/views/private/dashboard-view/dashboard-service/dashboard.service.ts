@@ -7,6 +7,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DashboardService extends CrudService<any> {
   constructor(http: HttpClient) {
-    super(http, 'https://githubanotaai.github.io/frontend-interview-mock-data/cardlist.json');
+    super(http, 'https://githubanotaai.github.io/frontend-interview-mock-data/cardlist.json')
   }
 }
