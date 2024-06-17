@@ -1,27 +1,76 @@
-# TestAngularAnotaAi
+## Descrição
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+Este é um projeto de teste para desenvolvedores front-end da Anota AI. O projeto consiste em criar um layout com diversos cartões de itens como 'Árvore', 'Flor', 'Fatia de pizza', 'Girassol', 'Pizza', e 'Pizza inteira'. O layout inclui opções para buscar novos produtos e outras funcionalidades.
 
-## Development server
+## Requisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js: 20.11.1
+- Angular: 17.3.0
 
-## Code scaffolding
+## Estrutura do Projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A estrutura do projeto está organizada da seguinte forma:
+app
+├── shared
+│   ├── components
+│   ├── services
+│   └── types
+├── views
+│   ├── private
+│   └── public
+├── app.component.html
+├── app.component.scss
+├── app.component.spec.ts
+├── app.component.ts
+├── app.config.ts
+├── app.route.ts
+assets
+├── images
+├── styles
+│   └── .gitkeep
+types-modules
+├── index.html
+├── main.ts
+├── styles.scss
+.editorconfig
 
-## Build
+### Descrição das Pastas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **shared**: Contém componentes reutilizáveis, serviços e tipos.
+- **views**: Organiza as vistas em privadas e públicas.
+- **assets**: Contém imagens e estilos globais.
+- **types-modules**: Contém definições de tipos e módulos auxiliares.
+- **root files**: Arquivos principais de configuração e bootstrap da aplicação.
 
-## Running unit tests
+### Componentes Standalone
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Os componentes foram gerados como standalone para promover a modularidade e a reutilização. Com componentes standalone, podemos evitar dependências desnecessárias e facilitar o teste e a manutenção do código.
 
-## Running end-to-end tests
+## Instalação
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone o repositório:
 
-## Further help
+   ```bash
+   git clone https://github.com/JessikaAguiar/test-angular-anota-ai.git
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Navegue até o diretório do projeto:
+
+   ```bash
+   cd test-angular-anota-ai
+   
+3. Instale as dependências:
+
+    ```bash
+    npm install
+
+## Executando o Projeto
+
+1. Inicie o servidor de desenvolvimento:
+
+    ```bash
+       ng serve -0
+
+2. Abra o navegador e acesse:
+
+    ```bash
+       http://localhost:4200
